@@ -55,7 +55,7 @@ pipeline {
       stage('Deploy') { // Compile and do unit testing
         // Run gradle to execute compile and unit testing
         sh "docker run -d furbaez/vote"
-    }
-    }
-  }
+        }
+      }
+   }
 }
