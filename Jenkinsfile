@@ -53,5 +53,13 @@ pipeline {
         }
       }
     }
+    stage('Push result image') {
+      when {
+        branch 'master'
+      }
+      steps {
+        sh 'docker run -d  furbaez/vote'
+      }
+    }
   }
 }
