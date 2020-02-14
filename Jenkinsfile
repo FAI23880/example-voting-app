@@ -1,6 +1,6 @@
 pipeline {
   environment {
-        VERSION = 1.5
+        VERSION = "1.5"
   }
   agent {
     node {
@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Build result') {
       steps {
-        sh 'docker build -t furbaez/result:${env.VERSION} ./result'
+        sh "docker build -t furbaez/result:${env.VERSION} ./result"
       }
     } 
     stage('Build vote') {
