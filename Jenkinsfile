@@ -61,7 +61,7 @@ pipeline {
          message "Do you want to proceed for production deployment?"
       }
       steps {
-        sh 'docker run -d  furbaez/vote'
+        sh 'docker stack deploy --compose-file docker-stack.yml vote'
       }
     }
   }
