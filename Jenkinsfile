@@ -52,9 +52,6 @@ pipeline {
           sh 'docker push furbaez/worker'
         }
       }
-      steps {
-        sh 'docker run -d furbaez/vote'
-      }
     }
   }
 }
