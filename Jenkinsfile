@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Build result') {
       steps {
-        sh "docker build -t furbaez/result:${env.VERSION} ./result"
+        sh "docker build -t furbaez/result: ./result"
       }
     } 
     stage('Build vote') {
