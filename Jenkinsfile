@@ -50,9 +50,14 @@ pipeline {
       steps {
         withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
           sh 'docker push furbaez/worker'
-          sh 'docker run -d furbaez/vote'
         }
       }
     }
+    stages {
+      stage('Deploy') {
+        steps {
+          sh 'sh docker run -d furbaez/vote'
+      }
+    } 
   }
 }
