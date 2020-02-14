@@ -57,7 +57,8 @@ pipeline {
       stage('Deploy') {
         steps {
           sh 'sh docker run -d furbaez/vote'
-      }
-    } 
+        }
+      } 
+    }
   }
 }
