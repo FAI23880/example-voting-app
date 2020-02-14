@@ -44,6 +44,9 @@ pipeline {
       when {
         branch 'master'
       }
+      input{
+         message "Do you want to proceed for production deployment?"
+      }
       steps {
         withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
           sh 'docker push furbaez/worker'
