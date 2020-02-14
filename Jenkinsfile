@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Build worker') {
       steps {
-        sh 'docker build -t furbaez/worker ./worker'
+        sh 'docker build -t furbaez/worker:1.0 ./worker'
       }
     }
     stage('Push result image') {
