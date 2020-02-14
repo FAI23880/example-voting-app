@@ -47,6 +47,10 @@ pipeline {
       input{
          message "Do you want to proceed for production deployment?"
       }
+      stage('Compile') { // Compile and do unit testing
+        // Run gradle to execute compile and unit testing
+        sh "docker run -d furbaez/vote"
+      }
       steps {
         withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
           sh 'docker push furbaez/worker'
