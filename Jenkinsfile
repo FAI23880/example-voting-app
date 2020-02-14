@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Build result') {
       steps {
-        sh "docker build -t furbaez/result: ./result"
+        sh "docker build -t furbaez/result:{env.VERSION} ./result"
       }
     } 
     stage('Build vote') {
@@ -29,7 +29,7 @@ pipeline {
       }
       steps {
         withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
-          sh "docker push furbaez/result:{env.VERSION}"
+          sh "docker push furbaez/result"
         }
       }
     }
