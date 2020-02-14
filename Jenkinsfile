@@ -29,7 +29,7 @@ pipeline {
       }
       steps {
         withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
-          sh 'docker push furbaez/result:{env.VERSION}'
+          sh "docker push furbaez/result:{env.VERSION}"
         }
       }
     }
