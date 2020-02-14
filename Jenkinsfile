@@ -53,7 +53,7 @@ pipeline {
         }
       }
     }
-    stage('Push result image') {
+    stage('Deploy') {
       when {
         branch 'master'
       }
