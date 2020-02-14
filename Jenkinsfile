@@ -46,7 +46,7 @@ pipeline {
       }
       steps {
         withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
-          sh 'docker push furbaez/worker'
+          sh 'docker push furbaez/worker:1.0'
         }
       }
     }
