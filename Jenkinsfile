@@ -15,12 +15,12 @@ pipeline {
     } 
     stage('Build vote') {
       steps {
-        sh 'docker build -t furbaez/vote:1.0 ./vote'
+        sh "docker build -t furbaez/vote:${env.VERSION} ./vote"
       }
     }
     stage('Build worker') {
       steps {
-        sh 'docker build -t furbaez/worker:1.0 ./worker'
+        sh "docker build -t furbaez/worker:${env.VERSION} ./worker"
       }
     }
     stage('Push result image') {
@@ -39,7 +39,7 @@ pipeline {
       }
       steps {
         withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
-          sh 'docker push furbaez/vote:1.0'
+          sh 'docker push furbaez/vote'
         }
       }
     }
@@ -49,7 +49,7 @@ pipeline {
       }
       steps {
         withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
-          sh 'docker push furbaez/worker:1.0'
+          sh 'docker push furbaez/worker'
         }
       }
     }
