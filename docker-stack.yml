@@ -36,7 +36,7 @@ services:
       restart_policy:
         condition: on-failure
   result:
-    image: dockersamples/examplevotingapp_result:before
+    image: furbaez/result::1.5
     ports:
       - 5001:80
     networks:
@@ -52,7 +52,7 @@ services:
         condition: on-failure
 
   worker:
-    image: dockersamples/examplevotingapp_worker
+    image: furbaez/worker:1.5
     networks:
       - frontend
       - backend
