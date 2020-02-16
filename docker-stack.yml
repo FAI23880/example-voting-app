@@ -1,5 +1,4 @@
 version: "3"
-image_version: 1.5
 services:
 
   redis:
