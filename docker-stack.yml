@@ -22,7 +22,7 @@ services:
       placement:
         constraints: [node.role == manager]
   vote:
-    image: furbaez/vote:"{{image_version}}"
+    image: furbaez/vote:"${image_version}"
     ports:
       - 5000:80
     networks:
