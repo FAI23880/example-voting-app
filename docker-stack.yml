@@ -1,6 +1,6 @@
 version: "3"
 services:
-
+  image_version: 1.5
   redis:
     image: redis:alpine
     networks:
@@ -22,7 +22,7 @@ services:
       placement:
         constraints: [node.role == manager]
   vote:
-    image: furbaez/vote:1.6
+    image: furbaez/vote:"{{image_version}}"
     ports:
       - 5000:80
     networks:
