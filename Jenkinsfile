@@ -1,6 +1,6 @@
 pipeline {
   environment {
-     def VERSION = "1.5"
+     def VERSION = "1.6"
   }
   agent {
     node {
