@@ -1,6 +1,6 @@
 version: "3"
 services:
-  image_version: 1.5
+  image_version: "1.5"
   redis:
     image: redis:alpine
     networks:
